@@ -14,7 +14,7 @@ export const DesignProcess: React.FC<DesignProcessProps> = ({ hideBackground = f
   return (
     <section
       id="process"
-      className={`relative py-16 sm:py-24 lg:py-36 text-[#FFEAC5] ${
+      className={`relative py-28 lg:py-36 text-[#FFEAC5] ${
         hideBackground ? 'bg-transparent' : 'bg-[#140D09] overflow-hidden'
       }`}
     >
@@ -28,14 +28,14 @@ export const DesignProcess: React.FC<DesignProcessProps> = ({ hideBackground = f
       {/* Subtle ambient warm accent */}
       <div className="absolute top-1/2 -right-60 w-[500px] h-[500px] bg-[#FFDBB5]/10 rounded-full blur-[150px] pointer-events-none z-10" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 pb-8 border-b border-[#603F26]/40">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-[#603F26]/40">
           <div>
             <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-3">
               Methodology &amp; Execution
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] text-[#FFEAC5]">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] text-[#FFEAC5]">
               The Design Journey. <br />
               <span className="italic text-[#FFDBB5]">From Vision to Reveal.</span>
             </h2>
@@ -46,7 +46,7 @@ export const DesignProcess: React.FC<DesignProcessProps> = ({ hideBackground = f
         </div>
 
         {/* Interactive Progressive Stage Selector Bar with Glassmorphic Transparency */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 mb-8 sm:mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
           {PROCESS_STAGES.map((stage, idx) => {
             const isActive = idx === activeStageIndex;
             const isCompleted = idx < activeStageIndex;
@@ -54,20 +54,20 @@ export const DesignProcess: React.FC<DesignProcessProps> = ({ hideBackground = f
               <button
                 key={stage.step}
                 onClick={() => setActiveStageIndex(idx)}
-                className={`text-left p-3 sm:p-4 rounded-xl border transition-all duration-300 relative backdrop-blur-md ${
+                className={`text-left p-4 rounded-xl border transition-all duration-300 relative backdrop-blur-md ${
                   isActive
                     ? 'bg-[#140D09]/85 border-[#FFDBB5] shadow-[0_0_20px_rgba(255,219,181,0.3)]'
                     : 'bg-[#140D09]/60 border-[#603F26]/40 hover:border-[#FFDBB5]/40 opacity-80 hover:opacity-100'
                 }`}
               >
-                <div className="flex items-center justify-between mb-1.5 sm:mb-2">
+                <div className="flex items-center justify-between mb-2">
                   <span className={`font-mono text-xs ${isActive ? 'text-[#FFDBB5] font-bold' : 'text-[#FFEAC5]/50'}`}>
                     {stage.step}
                   </span>
                   {isActive && <div className="w-2 h-2 rounded-full bg-[#FFDBB5] animate-pulse" />}
                   {isCompleted && <Check className="w-3.5 h-3.5 text-[#FFEAC5]/50" />}
                 </div>
-                <div className={`font-serif text-xs sm:text-base leading-tight line-clamp-1 sm:line-clamp-none ${isActive ? 'text-[#FFEAC5]' : 'text-[#FFEAC5]/75'}`}>
+                <div className={`font-serif text-sm sm:text-base leading-tight ${isActive ? 'text-[#FFEAC5]' : 'text-[#FFEAC5]/75'}`}>
                   {stage.title}
                 </div>
               </button>
@@ -76,7 +76,7 @@ export const DesignProcess: React.FC<DesignProcessProps> = ({ hideBackground = f
         </div>
 
         {/* Featured Active Stage Showcase Card with Glass Cover */}
-        <div className="relative rounded-2xl sm:rounded-3xl bg-[#140D09]/80 backdrop-blur-md border border-[#FFDBB5]/25 p-5 sm:p-10 lg:p-16 overflow-hidden shadow-2xl">
+        <div className="relative rounded-3xl bg-[#140D09]/80 backdrop-blur-md border border-[#FFDBB5]/25 p-8 sm:p-12 lg:p-16 overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Narrative */}
             <div className="lg:col-span-7 space-y-6">
@@ -89,7 +89,7 @@ export const DesignProcess: React.FC<DesignProcessProps> = ({ hideBackground = f
                 <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#FFEAC5]/50 block mb-2">
                   Stage {currentStage.step} of 06
                 </span>
-                <h3 className="font-serif text-2xl min-[400px]:text-3xl sm:text-4xl lg:text-5xl text-[#FFEAC5] font-normal">
+                <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#FFEAC5] font-normal">
                   {currentStage.title}
                 </h3>
               </div>

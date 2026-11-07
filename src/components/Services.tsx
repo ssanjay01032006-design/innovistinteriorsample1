@@ -57,7 +57,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenConsultation }) => {
     /* 
       IMPORTANT: No overflow-hidden on this section container so position: sticky works smoothly!
     */
-    <section id="services" className="relative py-16 sm:py-24 lg:py-36 bg-[#140D09] text-[#FFEAC5]">
+    <section id="services" className="relative py-28 lg:py-36 bg-[#140D09] text-[#FFEAC5]">
       {/* 
         Radial Gradient of the Brown Palette:
         Light warm amber/timber brown at the middle zone, seamlessly transitioning to deep espresso at the edges.
@@ -77,14 +77,14 @@ export const Services: React.FC<ServicesProps> = ({ onOpenConsultation }) => {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 lg:mb-20 pb-8 border-b border-[#603F26]/40">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 lg:mb-20 pb-8 border-b border-[#603F26]/40">
           <div>
             <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-3">
               Comprehensive Studio Capabilities
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] text-[#FFEAC5]">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] text-[#FFEAC5]">
               Bespoke Services. <br />
               <span className="italic text-[#FFDBB5]">
                 End-to-End Precision.
@@ -104,8 +104,8 @@ export const Services: React.FC<ServicesProps> = ({ onOpenConsultation }) => {
         */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start relative">
           {/* STICKY VISUAL PREVIEW CONTAINER */}
-          <div className="lg:col-span-6 sticky top-16 sm:top-20 lg:top-28 z-30">
-            <div className="relative aspect-[16/10] sm:aspect-[16/10] lg:aspect-[4/5] overflow-hidden rounded-2xl sm:rounded-3xl border border-[#FFDBB5]/30 bg-[#1B120C] shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+          <div className="lg:col-span-6 sticky top-20 sm:top-24 lg:top-28 z-30">
+            <div className="relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/5] overflow-hidden rounded-3xl border border-[#FFDBB5]/30 bg-[#1B120C] shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
               {/* Layered Crossfading Images */}
               {SERVICES.map((s, index) => {
                 const isActive = s.id === activeServiceId;
@@ -142,9 +142,9 @@ export const Services: React.FC<ServicesProps> = ({ onOpenConsultation }) => {
               </div>
 
               {/* Sticky Bottom Information Bar */}
-              <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 z-20 flex flex-col gap-2 sm:gap-2.5 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[#1B120C]/90 backdrop-blur-md border border-[#603F26]/50 shadow-xl">
+              <div className="absolute bottom-5 left-5 right-5 z-20 flex flex-col gap-2.5 p-4 sm:p-5 rounded-2xl bg-[#1B120C]/90 backdrop-blur-md border border-[#603F26]/50 shadow-xl">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[9px] sm:text-[11px] uppercase tracking-[0.25em] text-[#FFDBB5]">
+                  <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#FFDBB5]">
                     Current Discipline
                   </span>
                   <div className="flex gap-1">
@@ -153,27 +153,27 @@ export const Services: React.FC<ServicesProps> = ({ onOpenConsultation }) => {
                         key={s.id}
                         onClick={() => handleServiceClick(s.id)}
                         aria-label={`Jump to ${s.title}`}
-                        className={`h-1 sm:h-1.5 rounded-full transition-all duration-300 ${
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
                           s.id === activeServiceId
-                            ? 'w-5 sm:w-6 bg-[#FFDBB5]'
-                            : 'w-1 sm:w-1.5 bg-[#FFEAC5]/25 hover:bg-[#FFEAC5]/50'
+                            ? 'w-6 bg-[#FFDBB5]'
+                            : 'w-1.5 bg-[#FFEAC5]/25 hover:bg-[#FFEAC5]/50'
                         }`}
                       />
                     ))}
                   </div>
                 </div>
 
-                <h4 className="font-serif text-lg sm:text-2xl text-[#FFEAC5] font-normal leading-tight">
+                <h4 className="font-serif text-xl sm:text-2xl text-[#FFEAC5] font-normal leading-tight">
                   {activeService.title}
                 </h4>
 
                 <div className="flex items-center justify-between pt-1 border-t border-[#603F26]/30">
-                  <span className="text-[11px] sm:text-xs text-[#FFEAC5]/70 font-sans line-clamp-1 max-w-[200px] sm:max-w-[260px]">
+                  <span className="text-xs text-[#FFEAC5]/70 font-sans line-clamp-1 max-w-[220px]">
                     {activeService.tagline}
                   </span>
                   <button
                     onClick={onOpenConsultation}
-                    className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-sans uppercase tracking-[0.18em] text-[#FFDBB5] hover:text-[#FFEAC5] transition-colors flex-shrink-0"
+                    className="inline-flex items-center gap-1.5 text-xs font-sans uppercase tracking-[0.18em] text-[#FFDBB5] hover:text-[#FFEAC5] transition-colors flex-shrink-0"
                   >
                     <span>Request Spec</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -185,7 +185,8 @@ export const Services: React.FC<ServicesProps> = ({ onOpenConsultation }) => {
 
           {/* 
             SCROLLING NARRATIVE CHAPTERS
-            Spaced comfortably for natural mobile and desktop engagement.
+            Each service chapter is spaced out with comfortable height.
+            As the user scrolls, each chapter triggers the sticky image change!
           */}
           <div className="lg:col-span-6 flex flex-col">
             {SERVICES.map((service) => {
@@ -198,12 +199,12 @@ export const Services: React.FC<ServicesProps> = ({ onOpenConsultation }) => {
                     serviceRefs.current[service.id] = el;
                   }}
                   onClick={() => handleServiceClick(service.id)}
-                  className={`min-h-[45vh] sm:min-h-[55vh] lg:min-h-[65vh] flex flex-col justify-center py-10 sm:py-16 lg:py-24 border-b border-[#603F26]/30 cursor-pointer transition-all duration-500 ${
-                    isActive ? 'opacity-100' : 'opacity-35 hover:opacity-70'
+                  className={`min-h-[55vh] sm:min-h-[65vh] flex flex-col justify-center py-16 sm:py-24 border-b border-[#603F26]/30 cursor-pointer transition-all duration-500 ${
+                    isActive ? 'opacity-100' : 'opacity-30 hover:opacity-70'
                   }`}
                 >
                   {/* Service Number & Category */}
-                  <div className="flex items-center gap-4 mb-3 sm:mb-4">
+                  <div className="flex items-center gap-4 mb-4">
                     <span
                       className={`font-mono text-sm sm:text-base font-bold tracking-widest transition-colors duration-300 ${
                         isActive ? 'text-[#FFDBB5]' : 'text-[#FFEAC5]/30'
@@ -216,14 +217,14 @@ export const Services: React.FC<ServicesProps> = ({ onOpenConsultation }) => {
                         isActive ? 'w-12 bg-[#FFDBB5]' : 'w-6 bg-[#603F26]/40'
                       }`}
                     />
-                    <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#FFEAC5]/50">
+                    <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#FFEAC5]/50">
                       Practice {service.index} of 08
                     </span>
                   </div>
 
                   {/* Title */}
                   <h3
-                    className={`font-serif text-2xl min-[400px]:text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight mb-2 sm:mb-3 transition-colors duration-300 ${
+                    className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight mb-3 transition-colors duration-300 ${
                       isActive ? 'text-[#FFEAC5]' : 'text-[#FFEAC5]/60'
                     }`}
                   >

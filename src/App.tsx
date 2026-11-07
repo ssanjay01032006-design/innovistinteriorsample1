@@ -28,7 +28,7 @@ export function App() {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-[#140D09] text-[#FFEAC5] selection:bg-[#FFDBB5] selection:text-[#140D09] overflow-x-hidden">
+    <div className="relative w-full min-h-screen bg-[#0b0c0e] text-[#f4f2ee] selection:bg-[#c5a880] selection:text-[#0b0c0e]">
       {/* Scroll-Aware Sticky Navbar */}
       <Navbar onOpenConsultation={() => setIsConsultationOpen(true)} />
 

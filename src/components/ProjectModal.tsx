@@ -30,20 +30,20 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 lg:p-10 bg-black/90 backdrop-blur-xl animate-fade-in overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-10 bg-black/90 backdrop-blur-xl animate-fade-in overflow-y-auto">
       {/* Modal Container */}
-      <div className="relative w-full max-w-5xl bg-[#1B120C] border border-[#603F26]/50 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl my-auto text-[#FFEAC5] max-h-[92vh] overflow-y-auto">
+      <div className="relative w-full max-w-5xl bg-[#1B120C] border border-[#603F26]/50 rounded-3xl overflow-hidden shadow-2xl my-auto text-[#FFEAC5]">
         {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Close Project Modal"
-          className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30 p-2.5 rounded-full bg-black/70 border border-[#FFDBB5]/30 text-[#FFEAC5]/80 hover:text-[#FFEAC5] hover:border-[#FFDBB5] transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
+          className="absolute top-6 right-6 z-30 p-2.5 rounded-full bg-black/60 border border-[#FFDBB5]/30 text-[#FFEAC5]/80 hover:text-[#FFEAC5] hover:border-[#FFDBB5] transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Hero Image */}
-        <div className="relative h-[240px] sm:h-[380px] lg:h-[460px] w-full overflow-hidden bg-[#140D09]">
+        <div className="relative h-[360px] sm:h-[460px] w-full overflow-hidden bg-[#140D09]">
           <img
             src={project.image}
             alt={project.title}
@@ -51,16 +51,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1B120C] via-transparent to-black/50" />
           
-          <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4">
+          <div className="absolute bottom-8 left-8 right-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#FFDBB5] block mb-1 sm:mb-2">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#FFDBB5] block mb-2">
                 {project.category}
               </span>
-              <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-[#FFEAC5] font-normal leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#FFEAC5] font-normal">
                 {project.title}
               </h2>
             </div>
-            <div className="flex items-center gap-3 sm:gap-4 text-xs font-mono text-[#FFEAC5]/70">
+            <div className="flex items-center gap-4 text-xs font-mono text-[#FFEAC5]/70">
               <span className="flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-[#FFDBB5]" />
                 {project.location}
@@ -74,7 +74,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
         </div>
 
         {/* Modal Body Content */}
-        <div className="p-5 sm:p-8 lg:p-12 space-y-6 sm:space-y-8">
+        <div className="p-8 sm:p-10 lg:p-12 space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-[#603F26]/30">
             <div className="md:col-span-2 space-y-4">
               <h3 className="text-xs uppercase tracking-[0.25em] font-mono text-[#FFDBB5]">

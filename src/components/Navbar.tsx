@@ -24,18 +24,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile navigation drawer is open
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [mobileMenuOpen]);
-
   const navLinks = [
     { name: 'About', href: '#studio-intro' },
     { name: 'Services', href: '#services' },
@@ -116,12 +104,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
 
-            {/* Mobile Menu Button - Accessible 44x44px touch target */}
+            {/* Mobile Menu Button */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Menu"
-              className="lg:hidden w-11 h-11 flex items-center justify-center rounded-xl text-[#FFEAC5]/90 hover:text-[#FFEAC5] border border-[#FFDBB5]/25 hover:border-[#FFDBB5]/50 bg-[#1B120C]/60 transition-colors"
+              className="lg:hidden p-2 rounded-lg text-[#FFEAC5]/80 hover:text-[#FFEAC5] border border-[#FFDBB5]/20 hover:border-[#FFDBB5]/50 transition-colors"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -131,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
 
       {/* Mobile Full-Screen Menu Drawer */}
       <div
-        className={`fixed inset-0 z-40 bg-[#140D09]/98 backdrop-blur-2xl transition-all duration-500 flex flex-col justify-between p-6 sm:p-8 pt-24 sm:pt-28 lg:hidden overflow-y-auto ${
+        className={`fixed inset-0 z-40 bg-[#140D09]/98 backdrop-blur-2xl transition-all duration-500 flex flex-col justify-between p-8 pt-28 lg:hidden ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-4'
         }`}
       >

@@ -5,7 +5,6 @@ import { WoodPatternBackground } from './WoodPatternBackground';
 
 export const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
 
   const prev = () => {
     setCurrentIndex((c) => (c === 0 ? TESTIMONIALS.length - 1 : c - 1));
@@ -15,48 +14,28 @@ export const Testimonials: React.FC = () => {
     setCurrentIndex((c) => (c === TESTIMONIALS.length - 1 ? 0 : c + 1));
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStart === null) return;
-    const touchEnd = e.changedTouches[0].clientX;
-    const diff = touchStart - touchEnd;
-    if (diff > 45) {
-      next();
-    } else if (diff < -45) {
-      prev();
-    }
-    setTouchStart(null);
-  };
-
   const activeTestimonial = TESTIMONIALS[currentIndex];
 
   return (
-    <section id="testimonials" className="relative py-16 sm:py-24 lg:py-36 bg-[#1B120C] text-[#FFEAC5] overflow-hidden">
+    <section id="testimonials" className="relative py-28 lg:py-36 bg-[#1B120C] text-[#FFEAC5] overflow-hidden">
       {/* Wood Pattern Background with Gaussian Blur & Gradient Effect */}
       <WoodPatternBackground pattern="sculpted" blur="lg" opacity={0.25} variant="mocha" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 text-center">
         {/* Eyebrow */}
-        <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-6 sm:mb-8">
+        <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-8">
           Client Reflections
         </span>
 
-        {/* Large Editorial Quote with Touch Swipe Support */}
-        <div
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-          className="relative min-h-[220px] sm:min-h-[260px] flex flex-col items-center justify-center mb-8 sm:mb-12 cursor-grab active:cursor-grabbing select-none"
-        >
-          <Quote className="w-8 h-8 sm:w-12 sm:h-12 text-[#FFDBB5]/30 mb-6 sm:mb-8 mx-auto" />
-          <p className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-[#FFEAC5] leading-relaxed tracking-tight text-balance px-2">
+        {/* Large Editorial Quote */}
+        <div className="relative min-h-[260px] flex flex-col items-center justify-center mb-12">
+          <Quote className="w-12 h-12 text-[#FFDBB5]/30 mb-8 mx-auto" />
+          <p className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-[#FFEAC5] leading-relaxed tracking-tight text-balance">
             "{activeTestimonial.quote}"
           </p>
 
-          <div className="mt-6 sm:mt-8 flex flex-col items-center space-y-1">
-            <h4 className="font-sans font-semibold text-xs sm:text-sm uppercase tracking-widest text-[#FFEAC5]">
+          <div className="mt-8 flex flex-col items-center space-y-1">
+            <h4 className="font-sans font-semibold text-sm uppercase tracking-widest text-[#FFEAC5]">
               {activeTestimonial.client}
             </h4>
             <p className="text-xs text-[#FFEAC5]/60 font-sans">
