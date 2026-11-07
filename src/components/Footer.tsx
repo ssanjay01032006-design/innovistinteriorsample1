@@ -11,12 +11,12 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#0F0A06] text-[#FFEAC5] pt-20 pb-12 border-t border-[#603F26]/40 overflow-hidden">
+    <footer className="relative bg-[#0F0A06] text-[#FFEAC5] pt-16 sm:pt-20 pb-12 border-t border-[#603F26]/40 overflow-hidden">
       {/* Wood Pattern Background with Gaussian Blur & Gradient Effect */}
       <WoodPatternBackground pattern="geometric" blur="lg" opacity={0.25} variant="deep" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-[#603F26]/30">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 pb-12 sm:pb-16 border-b border-[#603F26]/30">
           {/* Brand Info with User Uploaded Logo (Image 3) */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-3.5">

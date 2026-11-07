@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork }) => {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-[#140D09]"
+      className="relative w-full min-h-[100svh] min-h-[580px] sm:min-h-[680px] flex items-center justify-center overflow-hidden bg-[#140D09]"
     >
       {/* 
         LAYERED BACKGROUND SLIDESHOW
@@ -85,7 +85,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork }) => {
         </div>
 
         {/* Main Editorial Headline */}
-        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-[#FFEAC5] font-normal leading-[1.06] mb-6 drop-shadow-md">
+        <h1 className="font-serif text-4xl min-[380px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-[#FFEAC5] font-normal leading-[1.08] mb-6 drop-shadow-md">
           Spaces That <br />
           <span className="italic font-light text-[#FFDBB5] gold-glow">
             Speak Beyond Design.
@@ -93,15 +93,15 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork }) => {
         </h1>
 
         {/* Minimal Supporting Description */}
-        <p className="max-w-2xl text-base sm:text-lg md:text-xl text-[#FFEAC5]/80 font-sans font-light leading-relaxed tracking-wide mb-10 text-balance drop-shadow-sm">
+        <p className="max-w-2xl text-sm sm:text-lg md:text-xl text-[#FFEAC5]/80 font-sans font-light leading-relaxed tracking-wide mb-8 sm:mb-10 text-balance drop-shadow-sm px-2">
           We transform spaces into timeless experiences through thoughtful design, refined materials and exceptional craftsmanship.
         </p>
 
         {/* Primary CTA */}
-        <div className="flex flex-col sm:flex-row items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
           <button
             onClick={onExploreWork}
-            className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#FFDBB5] text-[#140D09] font-sans font-semibold text-xs tracking-[0.22em] uppercase transition-all duration-300 hover:bg-[#FFEAC5] hover:shadow-[0_0_30px_rgba(255,219,181,0.5)] hover:scale-[1.02] active:scale-[0.98]"
+            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#FFDBB5] text-[#140D09] font-sans font-semibold text-xs tracking-[0.22em] uppercase transition-all duration-300 hover:bg-[#FFEAC5] hover:shadow-[0_0_30px_rgba(255,219,181,0.5)] hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>Explore Our Work</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

@@ -12,7 +12,7 @@ export const Craftsmanship: React.FC<CraftsmanshipProps> = ({ hideBackground = f
   return (
     <section
       id="craftsmanship"
-      className={`relative py-28 lg:py-36 text-[#FFEAC5] ${
+      className={`relative py-16 sm:py-24 lg:py-36 text-[#FFEAC5] ${
         hideBackground ? 'bg-transparent' : 'bg-[#140D09] overflow-hidden'
       }`}
     >
@@ -30,14 +30,14 @@ export const Craftsmanship: React.FC<CraftsmanshipProps> = ({ hideBackground = f
         />
       )}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-[#603F26]/30">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 pb-8 border-b border-[#603F26]/30">
           <div>
             <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-3">
               Sensory Materiality · European Quarries &amp; Ateliers
             </span>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] text-[#FFEAC5]">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] text-[#FFEAC5]">
               Craftsmanship &amp; Materials. <br />
               <span className="italic text-[#FFDBB5]">
                 The Poetry of Texture.
@@ -50,13 +50,14 @@ export const Craftsmanship: React.FC<CraftsmanshipProps> = ({ hideBackground = f
         </div>
 
         {/* Tactile Material Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {MATERIALS.map((mat) => {
             const isSelected = mat.id === activeMaterialId;
             return (
               <div
                 key={mat.id}
                 onMouseEnter={() => setActiveMaterialId(mat.id)}
+                onClick={() => setActiveMaterialId(mat.id)}
                 className={`group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-500 bg-[#231812] shadow-xl ${
                   isSelected
                     ? 'border-[#FFDBB5] shadow-[0_10px_30px_-5px_rgba(255,219,181,0.25)]'

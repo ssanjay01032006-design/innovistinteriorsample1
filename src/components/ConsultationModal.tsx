@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 interface ConsultationModalProps {
@@ -19,6 +19,20 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
     details: '',
   });
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') onClose();
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.body.style.overflow = '';
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,13 +41,13 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-xl animate-fade-in overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-[#1B120C] border border-[#603F26]/60 rounded-3xl overflow-hidden shadow-2xl my-auto text-[#FFEAC5] p-8 sm:p-10">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-xl animate-fade-in overflow-y-auto">
+      <div className="relative w-full max-w-2xl bg-[#1B120C] border border-[#603F26]/60 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl my-auto text-[#FFEAC5] p-5 sm:p-8 lg:p-10 max-h-[92vh] overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-6 right-6 p-2 rounded-full bg-[#140D09]/60 border border-[#FFDBB5]/20 text-[#FFEAC5]/70 hover:text-[#FFEAC5] hover:border-[#FFDBB5] transition-colors"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-full bg-[#140D09]/80 border border-[#FFDBB5]/20 text-[#FFEAC5]/70 hover:text-[#FFEAC5] hover:border-[#FFDBB5] transition-colors z-20 min-w-[40px] min-h-[40px] flex items-center justify-center"
         >
           <X className="w-5 h-5" />
         </button>

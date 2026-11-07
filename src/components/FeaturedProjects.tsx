@@ -26,7 +26,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
       : PROJECTS.filter((p) => p.category === selectedFilter);
 
   return (
-    <section id="projects" className="relative py-28 lg:py-36 bg-[#140D09] text-[#FFEAC5] overflow-hidden">
+    <section id="projects" className="relative py-16 sm:py-24 lg:py-36 bg-[#140D09] text-[#FFEAC5] overflow-hidden">
       {/* 
         Wood Pattern Design Background with Soft Feathered Edges
         (Soft edge transitions on both top and bottom eliminate any hard cut lines)
@@ -45,14 +45,14 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
       {/* Bottom Soft Feather Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-40 sm:h-52 bg-gradient-to-t from-[#140D09] via-[#140D09]/80 to-transparent pointer-events-none z-10" />
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-8 border-b border-[#603F26]/30">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 pb-8 border-b border-[#603F26]/30">
           <div>
             <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-3">
               Selected Works · 2024—2026
             </span>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] text-[#FFEAC5]">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] text-[#FFEAC5]">
               Featured Projects. <br />
               <span className="italic text-[#FFDBB5]">
                 Timeless Living.
@@ -99,19 +99,19 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
                 <div className="absolute inset-0 bg-gradient-to-t from-[#140D09] via-[#140D09]/40 to-transparent" />
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 lg:p-12 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 lg:p-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6">
                 <div className="space-y-2 max-w-2xl">
-                  <div className="flex items-center gap-3">
-                    <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#FFDBB5]">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#FFDBB5]">
                       {filteredProjects[0].category}
                     </span>
                     <span className="text-[#FFEAC5]/40">·</span>
-                    <span className="text-xs text-[#FFEAC5]/70 flex items-center gap-1 font-mono">
+                    <span className="text-[11px] sm:text-xs text-[#FFEAC5]/70 flex items-center gap-1 font-mono">
                       <MapPin className="w-3.5 h-3.5 text-[#FFDBB5]" />
                       {filteredProjects[0].location}
                     </span>
                   </div>
-                  <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#FFEAC5] font-normal group-hover:text-[#FFDBB5] transition-colors">
+                  <h3 className="font-serif text-2xl min-[400px]:text-3xl sm:text-4xl lg:text-5xl text-[#FFEAC5] font-normal group-hover:text-[#FFDBB5] transition-colors leading-tight">
                     {filteredProjects[0].title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#FFEAC5]/75 line-clamp-2 max-w-xl font-sans font-light">
@@ -119,11 +119,11 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3 flex-shrink-0">
-                  <span className="text-xs uppercase tracking-[0.2em] font-sans font-medium text-[#FFEAC5] group-hover:text-[#FFDBB5] transition-colors">
+                <div className="flex items-center gap-3 flex-shrink-0 pt-2 sm:pt-0">
+                  <span className="text-[11px] sm:text-xs uppercase tracking-[0.2em] font-sans font-medium text-[#FFEAC5] group-hover:text-[#FFDBB5] transition-colors">
                     View Project
                   </span>
-                  <div className="w-10 h-10 rounded-full border border-[#FFDBB5]/40 flex items-center justify-center group-hover:border-[#FFDBB5] group-hover:bg-[#FFDBB5] group-hover:text-[#140D09] transition-all">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#FFDBB5]/40 flex items-center justify-center group-hover:border-[#FFDBB5] group-hover:bg-[#FFDBB5] group-hover:text-[#140D09] transition-all">
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
                   </div>
                 </div>
