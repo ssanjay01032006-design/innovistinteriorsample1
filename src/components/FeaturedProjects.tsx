@@ -47,7 +47,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 pb-6 sm:pb-8 border-b border-[#603F26]/30">
+        <div className="reveal-init flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 pb-6 sm:pb-8 border-b border-[#603F26]/30">
           <div>
             <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-2 sm:mb-3">
               Selected Works · 2024—2026
@@ -65,14 +65,14 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
         </div>
 
         {/* Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 sm:pb-6 mb-8 sm:mb-12 -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div className="reveal-init delay-75 flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 sm:pb-6 mb-8 sm:mb-12 -mx-4 px-4 sm:mx-0 sm:px-0">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedFilter(cat)}
               className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-sans tracking-wider uppercase transition-all duration-300 flex-shrink-0 ${
                 selectedFilter === cat
-                  ? 'bg-[#FFDBB5] text-[#140D09] font-semibold shadow-md'
+                  ? 'bg-[#FFDBB5] text-[#140D09] font-semibold shadow-md scale-105'
                   : 'bg-[#1B120C]/90 text-[#FFEAC5]/70 hover:text-[#FFEAC5] hover:bg-[#603F26]/40 border border-[#603F26]/40'
               }`}
             >
@@ -87,7 +87,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
           {filteredProjects[0] && (
             <div
               onClick={() => onSelectProject(filteredProjects[0])}
-              className="group cursor-pointer relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#603F26]/40 bg-[#1B120C] transition-all duration-500 hover:border-[#FFDBB5]/60 shadow-2xl"
+              className="group cursor-pointer relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#603F26]/40 bg-[#1B120C] transition-all duration-700 hover:border-[#FFDBB5]/60 hover:shadow-[0_20px_60px_rgba(0,0,0,0.7)] shadow-2xl reveal-scale delay-100"
             >
               <div className="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] w-full overflow-hidden">
                 <img
@@ -132,12 +132,12 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
           )}
 
           {/* Asymmetrical 2-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 reveal-init delay-150">
             {filteredProjects.slice(1, 3).map((project, idx) => (
               <div
                 key={project.id}
                 onClick={() => onSelectProject(project)}
-                className={`group cursor-pointer rounded-2xl overflow-hidden border border-[#603F26]/40 bg-[#1B120C] transition-all duration-500 hover:border-[#FFDBB5]/60 shadow-xl ${
+                className={`group cursor-pointer rounded-2xl overflow-hidden border border-[#603F26]/40 bg-[#1B120C] transition-all duration-700 hover:border-[#FFDBB5]/60 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)] shadow-xl ${
                   idx === 1 ? 'md:translate-y-8' : ''
                 }`}
               >

@@ -32,7 +32,7 @@ export const Craftsmanship: React.FC<CraftsmanshipProps> = ({ hideBackground = f
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 pb-6 sm:pb-8 border-b border-[#603F26]/30">
+        <div className="reveal-init flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 pb-6 sm:pb-8 border-b border-[#603F26]/30">
           <div>
             <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-2 sm:mb-3">
               Sensory Materiality · European Quarries &amp; Ateliers
@@ -51,16 +51,16 @@ export const Craftsmanship: React.FC<CraftsmanshipProps> = ({ hideBackground = f
 
         {/* Tactile Material Gallery */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {MATERIALS.map((mat) => {
+          {MATERIALS.map((mat, idx) => {
             const isSelected = mat.id === activeMaterialId;
             return (
               <div
                 key={mat.id}
                 onClick={() => setActiveMaterialId(mat.id)}
                 onMouseEnter={() => setActiveMaterialId(mat.id)}
-                className={`group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-500 bg-[#231812] shadow-xl ${
+                className={`reveal-init delay-${(idx % 3 + 1) * 100} group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-700 bg-[#231812] shadow-xl hover:-translate-y-1.5 ${
                   isSelected
-                    ? 'border-[#FFDBB5] shadow-[0_10px_30px_-5px_rgba(255,219,181,0.25)]'
+                    ? 'border-[#FFDBB5] shadow-[0_15px_35px_-5px_rgba(255,219,181,0.25)]'
                     : 'border-[#603F26]/40 hover:border-[#FFDBB5]/50'
                 }`}
               >

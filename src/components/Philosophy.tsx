@@ -22,15 +22,15 @@ export const Philosophy: React.FC = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Eyebrow - Clean typography without box */}
-        <div className="text-center mb-6 sm:mb-10">
+        <div className="text-center mb-6 sm:mb-10 reveal-init">
           <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] inline-block">
             Our Architectural Manifesto
           </span>
         </div>
 
         {/* Oversized Statement Headline - Open negative space without card box */}
-        <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-16 lg:mb-24">
-          <Quote className="w-8 h-8 sm:w-12 sm:h-12 text-[#FFDBB5]/50 mx-auto mb-4 sm:mb-8" />
+        <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-16 lg:mb-24 reveal-scale delay-100">
+          <Quote className="w-8 h-8 sm:w-12 sm:h-12 text-[#FFDBB5]/50 mx-auto mb-4 sm:mb-8 animate-float" />
           <h2 className="font-serif text-2xl min-[380px]:text-3xl sm:text-5xl lg:text-6xl font-light text-[#FFEAC5] leading-[1.18] tracking-tight text-balance">
             "Great interiors are not simply designed. They are thoughtfully{' '}
             <span className="italic text-[#FFDBB5]">
@@ -50,12 +50,15 @@ export const Philosophy: React.FC = () => {
 
         {/* Three Pillars - Seamless Editorial Flow without Individual Box Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 pt-8 sm:pt-12 border-t border-[#FFDBB5]/20">
-          {PHILOSOPHY.principles.map((item) => (
-            <div key={item.no} className="group relative">
-              <span className="font-mono text-xs text-[#FFDBB5] tracking-[0.25em] block mb-2 sm:mb-3">
+          {PHILOSOPHY.principles.map((item, idx) => (
+            <div
+              key={item.no}
+              className={`group relative reveal-init delay-${(idx + 1) * 100} p-4 rounded-xl transition-all duration-500 hover:bg-[#FFDBB5]/5`}
+            >
+              <span className="font-mono text-xs text-[#FFDBB5] tracking-[0.25em] block mb-2 sm:mb-3 transition-transform duration-300 group-hover:translate-x-1">
                 Pillar {item.no}
               </span>
-              <h3 className="font-serif text-xl sm:text-2xl text-[#FFEAC5] font-normal mb-2 sm:mb-3 group-hover:text-[#FFDBB5] transition-colors">
+              <h3 className="font-serif text-xl sm:text-2xl text-[#FFEAC5] font-normal mb-2 sm:mb-3 group-hover:text-[#FFDBB5] transition-colors duration-300">
                 {item.title}
               </h3>
               <p className="text-xs sm:text-sm text-[#FFEAC5]/75 font-sans leading-relaxed font-light">

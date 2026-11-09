@@ -25,12 +25,12 @@ export const DesignProcess: React.FC<DesignProcessProps> = ({ hideBackground = f
         <WoodPatternBackground pattern="striped" blur="none" opacity={0.65} overlay="tint" softEdges="top" />
       )}
 
-      {/* Subtle ambient warm accent */}
-      <div className="absolute top-1/2 -right-60 w-[500px] h-[500px] bg-[#FFDBB5]/10 rounded-full blur-[150px] pointer-events-none z-10" />
+      {/* Subtle ambient warm accent with gentle breathing */}
+      <div className="absolute top-1/2 -right-60 w-[500px] h-[500px] bg-[#FFDBB5]/10 rounded-full blur-[150px] pointer-events-none z-10 animate-pulse-slow" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 pb-6 sm:pb-8 border-b border-[#603F26]/40">
+        <div className="reveal-init flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 pb-6 sm:pb-8 border-b border-[#603F26]/40">
           <div>
             <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-2 sm:mb-3">
               Methodology &amp; Execution
@@ -46,7 +46,7 @@ export const DesignProcess: React.FC<DesignProcessProps> = ({ hideBackground = f
         </div>
 
         {/* Interactive Progressive Stage Selector Bar with Glassmorphic Transparency */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 mb-8 sm:mb-12">
+        <div className="reveal-init delay-100 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 mb-8 sm:mb-12">
           {PROCESS_STAGES.map((stage, idx) => {
             const isActive = idx === activeStageIndex;
             const isCompleted = idx < activeStageIndex;
@@ -56,7 +56,7 @@ export const DesignProcess: React.FC<DesignProcessProps> = ({ hideBackground = f
                 onClick={() => setActiveStageIndex(idx)}
                 className={`text-left p-3 sm:p-4 rounded-xl border transition-all duration-300 relative backdrop-blur-md ${
                   isActive
-                    ? 'bg-[#140D09]/85 border-[#FFDBB5] shadow-[0_0_20px_rgba(255,219,181,0.3)]'
+                    ? 'bg-[#140D09]/85 border-[#FFDBB5] shadow-[0_0_20px_rgba(255,219,181,0.3)] scale-[1.02]'
                     : 'bg-[#140D09]/60 border-[#603F26]/40 hover:border-[#FFDBB5]/40 opacity-80 hover:opacity-100'
                 }`}
               >
@@ -76,7 +76,7 @@ export const DesignProcess: React.FC<DesignProcessProps> = ({ hideBackground = f
         </div>
 
         {/* Featured Active Stage Showcase Card with Glass Cover */}
-        <div className="relative rounded-2xl sm:rounded-3xl bg-[#140D09]/80 backdrop-blur-md border border-[#FFDBB5]/25 p-5 sm:p-10 lg:p-16 overflow-hidden shadow-2xl">
+        <div className="reveal-scale delay-200 relative rounded-2xl sm:rounded-3xl bg-[#140D09]/80 backdrop-blur-md border border-[#FFDBB5]/25 p-5 sm:p-10 lg:p-16 overflow-hidden shadow-2xl transition-all duration-700">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-center">
             {/* Left Narrative */}
             <div className="lg:col-span-7 space-y-4 sm:space-y-6">

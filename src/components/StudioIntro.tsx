@@ -5,12 +5,13 @@ import { ArrowUpRight } from 'lucide-react';
 export const StudioIntro: React.FC = () => {
   return (
     <section id="studio-intro" className="relative py-16 sm:py-24 lg:py-36 bg-[#140D09] text-[#FFEAC5] overflow-hidden">
-      {/* Decorative subtle ambient amber light glow */}
-      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#FFDBB5]/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Decorative subtle ambient amber light glow with breathing animation */}
+      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#FFDBB5]/10 rounded-full blur-[140px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute bottom-1/4 -right-48 w-80 h-80 bg-[#603F26]/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow delay-300" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 lg:mb-24 pb-6 sm:pb-8 border-b border-[#603F26]/30">
+        <div className="reveal-init flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 lg:mb-24 pb-6 sm:pb-8 border-b border-[#603F26]/30">
           <div>
             <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-2 sm:mb-3">
               {STUDIO_INTRO.eyebrow}
@@ -28,8 +29,8 @@ export const StudioIntro: React.FC = () => {
         {/* Asymmetrical Editorial Image Composition */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center mb-12 sm:mb-16 lg:mb-20">
           {/* Main Large Architectural Image */}
-          <div className="lg:col-span-7 relative group">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#603F26]/40 bg-[#1B120C] shadow-2xl">
+          <div className="lg:col-span-7 relative group reveal-scale delay-100">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#603F26]/40 bg-[#1B120C] shadow-2xl transition-all duration-700 group-hover:border-[#FFDBB5]/40 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
               <img
                 src={STUDIO_INTRO.mainImage}
                 alt="Studio Architectural Interior"
@@ -45,8 +46,8 @@ export const StudioIntro: React.FC = () => {
           </div>
 
           {/* Secondary Supporting Content & Secondary Image */}
-          <div className="lg:col-span-5 flex flex-col justify-between gap-6 sm:gap-8">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-[#603F26]/40 bg-[#1B120C] shadow-xl group">
+          <div className="lg:col-span-5 flex flex-col justify-between gap-6 sm:gap-8 reveal-init delay-200">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-[#603F26]/40 bg-[#1B120C] shadow-xl group transition-all duration-700 group-hover:border-[#FFDBB5]/40">
               <img
                 src={STUDIO_INTRO.secondaryImage}
                 alt="Bespoke Joinery Details"
@@ -80,10 +81,10 @@ export const StudioIntro: React.FC = () => {
         </div>
 
         {/* Editorial Stats Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-12 border-t border-[#603F26]/30">
+        <div className="reveal-init delay-300 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-12 border-t border-[#603F26]/30">
           {STUDIO_INTRO.stats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col">
-              <span className="font-serif text-2xl min-[380px]:text-3xl sm:text-4xl lg:text-5xl font-light text-[#FFDBB5] mb-1">
+            <div key={idx} className="flex flex-col group p-3 rounded-lg transition-colors duration-300 hover:bg-[#FFDBB5]/5">
+              <span className="font-serif text-2xl min-[380px]:text-3xl sm:text-4xl lg:text-5xl font-light text-[#FFDBB5] mb-1 transition-transform duration-300 group-hover:translate-x-1">
                 {stat.value}
               </span>
               <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#FFEAC5]/50 font-sans">

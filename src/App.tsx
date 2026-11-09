@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useScrollReveal } from './hooks/useScrollReveal';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StudioIntro } from './components/StudioIntro';
@@ -17,6 +18,7 @@ import { ConsultationModal } from './components/ConsultationModal';
 import type { Project } from './types';
 
 export function App() {
+  useScrollReveal();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
 

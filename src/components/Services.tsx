@@ -74,7 +74,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenConsultation }) => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 lg:mb-20 pb-6 sm:pb-8 border-b border-[#603F26]/40">
+        <div className="reveal-init flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 lg:mb-20 pb-6 sm:pb-8 border-b border-[#603F26]/40">
           <div>
             <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-2 sm:mb-3">
               Comprehensive Studio Capabilities

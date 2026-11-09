@@ -23,7 +23,7 @@ export const FAQ: React.FC = () => {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 lg:mb-20">
+        <div className="reveal-init text-center max-w-2xl mx-auto mb-10 sm:mb-16 lg:mb-20">
           <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-2 sm:mb-3">
             Inquiries &amp; Transparency
           </span>
@@ -42,7 +42,7 @@ export const FAQ: React.FC = () => {
             return (
               <div
                 key={idx}
-                className={`rounded-xl sm:rounded-2xl border transition-all duration-300 overflow-hidden ${
+                className={`reveal-init delay-${(idx % 4 + 1) * 75} rounded-xl sm:rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
                     ? 'bg-[#1B120C] border-[#FFDBB5]/50 shadow-[0_4px_20px_rgba(0,0,0,0.4)]'
                     : 'bg-[#18100B]/90 backdrop-blur-md border-[#603F26]/30 hover:border-[#603F26]/60'

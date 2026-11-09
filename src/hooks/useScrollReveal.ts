@@ -17,11 +17,28 @@ export function useScrollReveal() {
       }
     );
 
-    const elements = document.querySelectorAll('.reveal-init');
-    elements.forEach((el) => observer.observe(el));
+    const observeAll = () => {
+      const elements = document.querySelectorAll(
+        '.reveal-init:not(.reveal-visible), .reveal-left:not(.reveal-visible), .reveal-scale:not(.reveal-visible)'
+      );
+      elements.forEach((el) => observer.observe(el));
+    };
+
+    observeAll();
+
+    // Re-scan when DOM changes dynamically (e.g. tab switches, filter changes)
+    const mutationObserver = new MutationObserver(() => {
+      observeAll();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
     return () => {
       observer.disconnect();
+      mutationObserver.disconnect();
     };
   }, []);
 }

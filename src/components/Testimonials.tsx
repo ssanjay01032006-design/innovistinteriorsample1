@@ -23,14 +23,14 @@ export const Testimonials: React.FC = () => {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
         {/* Eyebrow */}
-        <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-6 sm:mb-8">
+        <span className="reveal-init text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-6 sm:mb-8">
           Client Reflections
         </span>
 
         {/* Large Editorial Quote */}
-        <div className="relative min-h-[200px] sm:min-h-[260px] flex flex-col items-center justify-center mb-8 sm:mb-12">
-          <Quote className="w-8 h-8 sm:w-12 sm:h-12 text-[#FFDBB5]/30 mb-4 sm:mb-8 mx-auto" />
-          <p className="font-serif text-xl min-[380px]:text-2xl sm:text-3xl md:text-4xl font-light text-[#FFEAC5] leading-relaxed tracking-tight text-balance">
+        <div className="reveal-scale delay-100 relative min-h-[200px] sm:min-h-[260px] flex flex-col items-center justify-center mb-8 sm:mb-12">
+          <Quote className="w-8 h-8 sm:w-12 sm:h-12 text-[#FFDBB5]/30 mb-4 sm:mb-8 mx-auto animate-float" />
+          <p className="font-serif text-xl min-[380px]:text-2xl sm:text-3xl md:text-4xl font-light text-[#FFEAC5] leading-relaxed tracking-tight text-balance transition-all duration-500">
             "{activeTestimonial.quote}"
           </p>
 
@@ -45,7 +45,7 @@ export const Testimonials: React.FC = () => {
         </div>
 
         {/* Controls */}
-        <div className="flex items-center justify-center gap-4 sm:gap-6">
+        <div className="reveal-init delay-200 flex items-center justify-center gap-4 sm:gap-6">
           <button
             onClick={prev}
             aria-label="Previous testimonial"
