@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork }) => {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-[#140D09]"
+      className="relative w-full min-h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden bg-[#140D09] py-24 sm:py-28 lg:py-0"
     >
       {/* 
         LAYERED BACKGROUND SLIDESHOW
@@ -76,16 +76,16 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork }) => {
         CENTERED CINEMATIC CONTENT
         Completely stable while background lighting changes.
       */}
-      <div className="relative z-30 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">
+      <div className="relative z-30 max-w-5xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
         {/* Eyebrow badge */}
-        <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#FFDBB5]/25 bg-[#1B120C]/60 backdrop-blur-md mb-6 lg:mb-8 animate-fade-in shadow-sm">
-          <span className="text-[11px] sm:text-xs font-sans tracking-[0.28em] uppercase text-[#FFEAC5] font-medium">
+        <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#FFDBB5]/25 bg-[#1B120C]/60 backdrop-blur-md mb-4 sm:mb-6 lg:mb-8 animate-fade-in shadow-sm">
+          <span className="text-[10px] min-[380px]:text-[11px] sm:text-xs font-sans tracking-[0.25em] sm:tracking-[0.28em] uppercase text-[#FFEAC5] font-medium">
             Interior Architecture &amp; Luxury Craft
           </span>
         </div>
 
         {/* Main Editorial Headline */}
-        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-[#FFEAC5] font-normal leading-[1.06] mb-6 drop-shadow-md">
+        <h1 className="font-serif text-4xl min-[380px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-[#FFEAC5] font-normal leading-[1.08] mb-4 sm:mb-6 drop-shadow-md">
           Spaces That <br />
           <span className="italic font-light text-[#FFDBB5] gold-glow">
             Speak Beyond Design.
@@ -93,15 +93,15 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork }) => {
         </h1>
 
         {/* Minimal Supporting Description */}
-        <p className="max-w-2xl text-base sm:text-lg md:text-xl text-[#FFEAC5]/80 font-sans font-light leading-relaxed tracking-wide mb-10 text-balance drop-shadow-sm">
+        <p className="max-w-2xl text-xs min-[380px]:text-sm sm:text-base md:text-xl text-[#FFEAC5]/80 font-sans font-light leading-relaxed tracking-wide mb-8 sm:mb-10 text-balance drop-shadow-sm px-2">
           We transform spaces into timeless experiences through thoughtful design, refined materials and exceptional craftsmanship.
         </p>
 
         {/* Primary CTA */}
-        <div className="flex flex-col sm:flex-row items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
           <button
             onClick={onExploreWork}
-            className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#FFDBB5] text-[#140D09] font-sans font-semibold text-xs tracking-[0.22em] uppercase transition-all duration-300 hover:bg-[#FFEAC5] hover:shadow-[0_0_30px_rgba(255,219,181,0.5)] hover:scale-[1.02] active:scale-[0.98]"
+            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-3.5 sm:py-4 rounded-full bg-[#FFDBB5] text-[#140D09] font-sans font-semibold text-xs tracking-[0.22em] uppercase transition-all duration-300 hover:bg-[#FFEAC5] hover:shadow-[0_0_30px_rgba(255,219,181,0.5)] hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>Explore Our Work</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

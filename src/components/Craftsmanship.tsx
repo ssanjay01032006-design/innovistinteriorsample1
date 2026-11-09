@@ -12,7 +12,7 @@ export const Craftsmanship: React.FC<CraftsmanshipProps> = ({ hideBackground = f
   return (
     <section
       id="craftsmanship"
-      className={`relative py-28 lg:py-36 text-[#FFEAC5] ${
+      className={`relative py-16 sm:py-24 lg:py-36 text-[#FFEAC5] ${
         hideBackground ? 'bg-transparent' : 'bg-[#140D09] overflow-hidden'
       }`}
     >
@@ -30,32 +30,33 @@ export const Craftsmanship: React.FC<CraftsmanshipProps> = ({ hideBackground = f
         />
       )}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-[#603F26]/30">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 pb-6 sm:pb-8 border-b border-[#603F26]/30">
           <div>
-            <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-3">
+            <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-[#FFDBB5] block mb-2 sm:mb-3">
               Sensory Materiality · European Quarries &amp; Ateliers
             </span>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] text-[#FFEAC5]">
+            <h2 className="font-serif text-3xl min-[380px]:text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] text-[#FFEAC5]">
               Craftsmanship &amp; Materials. <br />
               <span className="italic text-[#FFDBB5]">
                 The Poetry of Texture.
               </span>
             </h2>
           </div>
-          <p className="mt-6 md:mt-0 text-sm max-w-md font-sans text-[#FFEAC5]/70 tracking-wide leading-relaxed">
+          <p className="mt-4 sm:mt-6 md:mt-0 text-xs sm:text-sm max-w-md font-sans text-[#FFEAC5]/70 tracking-wide leading-relaxed">
             We collaborate exclusively with master stonemasons, multi-generational cabinetmakers, and heritage weavers who treat raw elements as living mediums.
           </p>
         </div>
 
         {/* Tactile Material Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {MATERIALS.map((mat) => {
             const isSelected = mat.id === activeMaterialId;
             return (
               <div
                 key={mat.id}
+                onClick={() => setActiveMaterialId(mat.id)}
                 onMouseEnter={() => setActiveMaterialId(mat.id)}
                 className={`group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-500 bg-[#231812] shadow-xl ${
                   isSelected
@@ -69,10 +70,10 @@ export const Craftsmanship: React.FC<CraftsmanshipProps> = ({ hideBackground = f
                     src={mat.image}
                     alt={mat.name}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#231812] via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-3.5 left-3.5">
                     <span className="px-3 py-1 rounded-full bg-[#140D09]/80 backdrop-blur-md border border-[#FFDBB5]/20 text-[10px] font-mono uppercase tracking-widest text-[#FFDBB5]">
                       {mat.category}
                     </span>
@@ -80,9 +81,9 @@ export const Craftsmanship: React.FC<CraftsmanshipProps> = ({ hideBackground = f
                 </div>
 
                 {/* Material Details */}
-                <div className="p-6 space-y-3">
+                <div className="p-5 sm:p-6 space-y-2.5 sm:space-y-3">
                   <div className="flex items-center justify-between">
-                    <h3 className="font-serif text-2xl text-[#FFEAC5] group-hover:text-[#FFDBB5] transition-colors">
+                    <h3 className="font-serif text-xl sm:text-2xl text-[#FFEAC5] group-hover:text-[#FFDBB5] transition-colors">
                       {mat.name}
                     </h3>
                   </div>
@@ -91,11 +92,11 @@ export const Craftsmanship: React.FC<CraftsmanshipProps> = ({ hideBackground = f
                     Origin: {mat.origin}
                   </span>
 
-                  <p className="text-xs text-[#FFEAC5]/70 font-sans leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#FFEAC5]/70 font-sans leading-relaxed">
                     {mat.description}
                   </p>
 
-                  <div className="pt-3 border-t border-[#603F26]/30 text-[11px] text-[#FFDBB5] font-sans italic">
+                  <div className="pt-2.5 sm:pt-3 border-t border-[#603F26]/30 text-[11px] text-[#FFDBB5] font-sans italic">
                     <span>{mat.textureNote}</span>
                   </div>
                 </div>
